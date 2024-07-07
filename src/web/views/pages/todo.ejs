@@ -1,0 +1,43 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+	<title>Todo List</title>
+</head>
+<body>
+  <main id="todo-main">
+    <ul id="todo-list" 
+		    class="list" 
+				hx-get="localhost:4000/todos" 
+				hx-swap="innerHTML"
+
+    >
+      
+		</ul>
+		<form hx-post="localhost:4000/todos/add/">
+      <input 
+			  id="new-todo" 
+				type="text" 
+				name="todo" 
+			  class="form-control"  
+      />
+			<button 
+        id="btn-todo" 
+				class="btn submit"
+      >
+				    Submit
+      </button> 
+		</form>
+	</main>
+	<script>
+   let list = document.querySelector('#todo-list')
+	 const res = fetch('localhost:4000/todos')
+   const data = res.json();
+  </script>
+	<script> 
+	  let list = document.querySelector('#todo-list')
+	  let li = document.createElement('li');
+
+	</script>
+</body>
+</html>
+
