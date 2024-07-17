@@ -1,10 +1,3 @@
-function error(err) { 
-  console.error(`
-    TODO ERROR: 
-    ${ err.name } \n  
-    ${ err.message} 
-  `)
-}
 class Todos {  
   public static list = [];
   public static makeElement(todo) {
@@ -16,67 +9,43 @@ class Todos {
     return element;
   }
   public static addElement(todoElement) {
-    try {
 		  this.list.push(todoElement);
-    } catch (err) {
-      error(err);
-      throw(err);
-    }
-  }
+
+  };
   public static makeList(todos) {
     for (todo in todos) {
-      try {
         const elem = this.makeElement(todo);
-        this.list.push(elem);
-      } catch (err) {
-        error(err);
-				throw err;
-      }
+				if (elem) { this.addElement(elem) }
+				else { console.error(`[TODO]: failed to add todo element to list`) }
     }
     return list;
   };
   public static add(todo) {
-    try {
-      const elem = this.makeElement(todo);
-      this.list.push(elem);							
-    } catch (err) { 
-      error(err);
-      throw err;
-    };
+    const elem = this.makeElement(todo);
+    if (elem) { this.addElement(elem) } 
+    else { console.error(`[TODO]: failed to add todo with id of ${todo.id} to list.`)} 							
   };
   public static delete(id) {
-    try {
-      this.list.splice(id, id);
-    } catch(err) { 
-      error(err);  
-      throw err;
-    };
+    this.list.splice(id, id);
   };
-  public static getTodo(id) {
+  public static grab(id) {
     const item = this.list[id];
-    if(item) {
-      return item;
-    } else {
-      console.error('[TODO]: ID did not correspond to any items in the list.')
-    }
+    if (item) { return item } 
+    else { console.error(`[TODO]: Could not find todo item with id of ${id}.`) }
   };
   public static updateTask(id, task) {
-    try {
-      const item = this.list[id];
-      item.task = task;
-    } catch(err) {
-		  error(err) 
-      throw err;
-    }
+    const item = this.grab(id);
+    if (item) { item.task = task} 
+    else { console.error(`[TODO]: Failed to update todo item with id of ${id}`) }
   };
   public static updateDesc(id, description) {
-    try {
-      const item = this.list[id];
-      item.description = description;
-    } catch (err) {
-      error(err);
-      throw err;
-    }
+    const item = this.grab(id);
+    if (item) { item.description = description } 
+    else { console.error(`[TODO]: Failed to update todo item with id of ${id}`)}
+  };
+  public static update(id, task, desc) {
+    updateTask(id, task);
+    updateDesc(id, desc);
   }
 };
 

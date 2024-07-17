@@ -1,4 +1,4 @@
-function checkEmailAvailability() {
+function checkEmailAvailability() {  
   // TODO
   return 1;
 }
