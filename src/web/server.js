@@ -13,11 +13,7 @@ server.use(express.json);
 server.use(express.urlencoded({extended: true}));
 server.use(express.static(__dirname, 'static'))
 server.set('view engine', 'ejs')
-// Routers
 server.use(authRouter);
-// server.use(todoRouter);
-// server.use(blogRouter);
-// server.use(utilRouter);
 
 // Routes 
 server.get('/', (req, res, next) => {

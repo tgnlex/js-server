@@ -1,38 +1,44 @@
 import express from 'express';
-import {Todos} from '../controllers/todo.js';
+import {Todo} from '../sql/todo.js';
+import {todoData} from '../lib/formData.js';
 const router = express.Router();
-// Temporary sample todos until db are setup;
-const todos = [
-  {id: 1, task: "Database", description: "Setup an in memory db, most like sqlite"},
-  {id  2, task: "Todo Frontend", description: "build the todos.ejs page"},
-  {id: 3, task: "Logging", description: "setup proper logging"}
-];
-
-function handleNewTodo(req) {
-  let task = req.body.task;
-  let desc = req.body.desc;
-  let id = todos.length + 1;
-  const todo = {
-    id: id,
-    task: task, 
-    description: desc
-  }
-  return todo;
-}
+router.use(express.json());
 
 router.get('/todo', (req, res, next) => {
-    const data = Todo.makeList(todos);
-    res.send(data);
+  const data = Todo.all();
+  res.json(data);
 });
-router.post('/todo/new', (req, res, next) => {
-  const data = handleNewTodo()
-  
-  res.redirect('/todo');
-    
-});
-router.patch('/todo/update', (req, res, next) => {
 
+router.get('/todo/search/:id', (req, res, next) => {
+  let id = req.params;
+  let data = Todo.getById(id)
+  res.json(data);
 });
-router.get('/todo/:id', (req, res, next) => {
 
+router.get('/todo/owner/:owner', (req, res, next) => {
+  let owner_id = req.params;
+  let data = Todo.owner(owner_id);
+  res.json(data);
 });
+
+router.delete('/todo/delete/:id', (req, res, next) => {
+  let id = req.params;
+  try {Todo.remove(id)}
+  catch(err) {
+    res.json({ message: `${err.message}`})
+    throw err;
+  }
+  res.status(200).json({ message: "sucess"})
+});
+
+router.post('/todo/new', (req, res, next, err) => {
+  let todo = todoData(req);
+  try { Todo.add(todo); }
+  catch (err) { 
+    res.json({ message: `${err.message}`})
+    throw err;
+  }
+  res.status(200).json({ message: "success!" });
+});
+
+
