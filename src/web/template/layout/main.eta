@@ -1,0 +1,13 @@
+<html lang="en">
+<head>
+  <title><%~ it.title %></title>
+</head>
+<body>
+  <%~ include("/partial/header.eta") %>
+  <%~ include("/partial/navbar.eta" %>
+  
+  <%~ it.body %>
+  
+  <%~ include("/partial/footer.eta") %>
+</body>
+</html>

@@ -1,34 +1,17 @@
-// Packages
+import {app, eta} from './config/globals.js';
+import {buildEtaEngine} from './config/viewEngine.js'
+app.use(express.json());
+app.use(express.urlencoded({extended: true}));
+app.use(express.static(__dirname, 'static'))
+app.engine('eta', buildEtaEngine())
+app.set('view engine', eta)
+app.use(authRouter);
 
-import express from 'express';
-// Import Config
-import {HOST, PORT} from './config/env.js'
-import {messages} from  './config/messages.js';
-import {log, render} from './config/alias.js';
-// Import Routers 
-import {authRouter} from './routes/auth.js';
-// Express Setup
-const server = express();
-server.use(express.json);
-server.use(express.urlencoded({extended: true}));
-server.use(express.static(__dirname, 'static'))
-server.set('view engine', 'ejs')
-server.use(authRouter);
-
-// Routes 
-server.get('/', (req, res, next) => {
-  render(res, 'index');
-});
-server.get('/test', (req, res, next) => {
-  res.render('<h1>Server Is Running</h1>')
-});
-server.get('/todos', (req, res, next) => {
-  render(res, 'todos')
-});
-
-function listen() {
-  app.listen(PORT, () => {
-    log(messages.serve)
+function frontend() {
+  let port = 3000;
+  app.listen(port, () => {
+    console.info(`Serving on http://localhost:${port}/`)
   });
 }
-export {listen}
+
+export {frontend}

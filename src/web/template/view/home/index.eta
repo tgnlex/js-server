@@ -1,0 +1,5 @@
+<% layout("/layout/default.eta") %>
+<main id="home" class="container">
+    <button id="btn-test">Backend Test</button>
+    <div id="display"></div>
+</main>
