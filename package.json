@@ -13,6 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "cookie-parser": "^1.4.6",
+    "debug": "^4.3.5",
     "dotenv": "^16.4.5",
     "eslint-plugin-jsdoc": "^48.7.0",
     "eta": "^3.4.0",
