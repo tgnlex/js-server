@@ -1,9 +1,0 @@
-
-	<menu class="sidebar">
-    <ul class="list">
-		  <li><a class="link" href="/">Home</a></li>
-			<li><a class="link" href="/todo">Todo</a></li>
-			<li><a class="link" href="/login">Login</li>
-			<li><a class="link" href="/register">Register</li>
-		</ul>
-	</menu>
