@@ -1,0 +1,29 @@
+import {Component} from 'preact';
+
+class Login extends Component {
+  render() {
+    return (
+      <main id="login" class="container">
+        <form id="login-form" class="auth-form" method="POST">
+          <input 
+            id="username" 
+            name="username" 
+            type="text"
+            class="form-control form-control-username" 
+            placeholder="Enter your username...."
+            required 
+          />
+          <input 
+            id="password"
+            name="password"
+            type="password"
+            class="form-control form-control-password"
+            placeholder="Enter your password...."
+            required
+          />
+        </form>
+      </main
+    ) 
+  }
+}
+export {Login};

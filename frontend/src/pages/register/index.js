@@ -1,0 +1,44 @@
+import {Component} from 'preact';
+
+class Register extends Component {
+  render() {
+    return (
+      <main id="register" class="container">
+        <form id="register-form" class="auth-form">
+          <input 
+            type="text" 
+            id="firstname"
+            class="form-control form-control-name"
+            name="firstname" />
+          <input 
+            type="text"
+            id="lastname"
+            class="form-control form-cotnrol-name"
+            name="lastname" />
+          <input 
+            type="email" 
+            id="email"
+            class="form-control form-control-email"
+            name="email" />
+          <input 
+            type="text"
+            id="username"
+            class="form-control form-control-username"
+            name="username" />
+          <input 
+            type="password"
+            id="password"
+            class="form-control form-control-password"
+            name="password" />
+          <input 
+            type="password"
+            id="password2"
+            class="form-control form-control-password"
+            name="password2" />
+          <input name="age" type="number" />
+        </form>
+      </main>
+    )
+  }
+}
+export {Register};
