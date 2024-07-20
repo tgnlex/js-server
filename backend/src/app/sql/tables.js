@@ -5,9 +5,9 @@ const userTable = new Table('users', '? ? ? ? ? ? ?', [
   'firstname', 'lastname', 'age',
   'username', 'email', 'account_type', 'hashed_password', 'salt'
 ]);
-const sessionTable = new Table('sessions', '? ? ? ? ? ? ?', [
+const sessionTable = new Table('sessions', '? ? ? ? ? ?', [
    'session_key', 'user_id', 'ip_address', 'user_agent', 
-   'user_data', 'username', 'last_activity'
+   'user_data', 'username'
 ]);
 const profileTable = new Table('profiles', '? ? ?' [
   'user_id', 'avatar', 'bio'

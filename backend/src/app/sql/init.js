@@ -1,39 +1,39 @@
 import {db, schema, deleteTable, createTable} from './export.js'
 
 function initUsers() {
-//  deleteTable('users');
+  deleteTable('users');
   createTable('users', schema.users)
 }
 function initTodos() {
-//  deleteTable('todos')
+  deleteTable('todos')
   createTable('todos', schema.todos)
 }
 function initAvatars() {
-  //deleteTable('avatars')
+  deleteTable('avatars')
   createTable('avatars', schema.avatars)
 }
 function initProfiles() {
-  //deleteTable('profiles');
+  deleteTable('profiles');
   createTable('profiles', schema.profiles);
 }
 function initLogs() {
-  //deleteTable('logs');
+  deleteTable('logs');
   createTable('logs', schema.logs);
 }
 function initMessages() {
-  //deleteTable('messages');
+  deleteTable('messages');
   createTable('messages', schema.messages);
 }
 function initPosts() {
-  //deleteTable('posts');
+  deleteTable('posts');
   createTable('posts', schema.posts);
 }
 function initComments() {
-  //deleteTable('comments');
+  deleteTable('comments');
   createTable('comments', schema.comments);
 }
 function initSessions() {
-  //deleteTable('sessions');
+  deleteTable('sessions');
   createTable('sessions', schema.sessions);
 }
 function initAll() {
@@ -47,4 +47,3 @@ function initAll() {
   initLogs();
   initTodos();
 }
-initAll()
