@@ -1,0 +1,12 @@
+{% extends 'layout.html' %} 
+{% block body %}
+<main id="todo" class="container">
+  <h1 class="todo-heading">Todo List</h1>
+  <div id="todo-list">
+    {% block  list %}{% endblock %}
+  </div>
+  <div id="todo-form">
+    {% block form %}{% endblock %}
+  </div>
+</main>
+{% endblock %}
