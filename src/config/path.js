@@ -22,7 +22,7 @@ export const __view = path.resolve(`${__app}/views/`)
 export const __style = path.resolve(`${__app}/style/`)
 export const __lib = path.resolve(`${__app}/lib/`)
 // Public Tree
-export const __static = path.resolve(`${__app}/static/`);
+export const __static = path.resolve(`${__root}/static/`);
 export const __js = path.resolve(`${__static}/js/`);
 export const __css = path.resolve(`${__static}/css/`)
 

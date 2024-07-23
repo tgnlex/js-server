@@ -1,0 +1,14 @@
+
+inline-list() {
+  li, .item, .list-item,
+      display: inline
+}
+comma-list() { 
+  inline-list()      
+  li, .item, .list-item
+    &:after 
+      content: ', '
+    &:last-child:after 
+      content: ''
+}
+

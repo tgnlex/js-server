@@ -1,0 +1,27 @@
+@import('../var/font.styl')
+.base-text
+  color: black      
+  line-height: 1.5
+  font: text-font 
+.tiny
+  @extends .base-text
+  font-size: 0.6em
+.small  
+  @extends .base-text
+  font-size: 0.9em
+.text
+  @extends base-text    
+  font-size: 1.2em
+  
+  .success
+  @extends .message
+  color: green 
+  .alert 
+  @extends .message
+  color: blue
+  
+.warning
+  @extends .message
+  color: red
+  
+
