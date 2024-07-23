@@ -1,10 +1,8 @@
-import {app} from './app/app.js';
-import {PORT, HOST} from './config/env.js';
+import {server} from './server.js';
 
 function main() {
-  app.listen(PORT, (req, res) => {
-    console.info(`[MAIN]: Server listening on http://${HOST}:${PORT}`)
-  });
+  console.info('[MAIN]: starting main loop...')
+  server();
 };
 
 

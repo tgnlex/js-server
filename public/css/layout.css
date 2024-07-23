@@ -1,0 +1,12 @@
+.full,
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+body {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  font: text-font;
+  color: #000;
+}
