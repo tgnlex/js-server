@@ -1,40 +1,36 @@
 import express from 'express';
 import session from 'express-session';
 import nunjucks from 'nunjucks';
-import cookieParser from 'cookie-parser';
-import {__view, __public} from '../config/paths.js';
-//import {api} from './routes/api/index.js';
-//import {auth} from './routes/auth/index.js';
-import {view} from './routes/view/index.js';
+import {styleConf} from '../config/stylus.js';
+import {__view, __static, __style} from '../config/path.js';
+import {viewRouter} from './routes/view.js';
+import {authRouter} from './routes/auth.js';
+import {api} from './api.js';
 
 const app = express();
 
+
 nunjucks.configure(__view, {
-  autoescape: true,
-  express: app,
-  noCache: false,
-  watch: true
-});
+  watch: true, 
+  express: app
+})
 
 app.set('views', __view); 
 app.set('view engine', 'html');
+app.use(express.static(__static));
+
+app.use(express.urlencoded({extended: true}))
+app.use(express.json());
+app.use(styleConf)
+
+
 
 app.use(session({ secret: 'secret-key', resave: false, saveUninitialized: false }));
-app.use(express.json());
-app.use(express.urlencoded({extended: true}));
-app.use(express.static(__public));
-//app.use(compression());
-app.use(cookieParser());
+/**  Routers **/
 
-
-//app.use(api, '/api/');
-//app.use(auth, '/auth/');
-//app.use(view,  '/view/');
-
-
-app.get('/', (req, res) => {
-  res.render('index.html', {});
-})
+app.use('/api', api);
+app.use('/auth', authRouter);
+app.use(viewRouter);
 
 
 export {app};

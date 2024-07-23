@@ -1,34 +1,21 @@
-const logLevels = {
-  levels: {
-    fatal: 0, 
-    alert: 10,
-    crit: 20,
-    error: 25, 
-    warn: 30,
-    notice: 40, 
-    info: 50,
-    http: 60,
-    event: 70, 
-    data: 75,
-    signal: 80, 
-    debug: 90,
-    meta: 100
-  },
-  colors: {
-    fatal: 'red',
-    alert: 'red',
-    crit: 'red',
-    error: 'red',
-    warn: 'orange',
-    notice: 'purple',
-    info: 'green',
-    event: 'cyan',
-    http: 'yellow',
-    data: 'pink',
-    signal: 'white',
-    debug: 'white',
-    meta: 'gray'
-  }
+
+
+const levels = {
+  emerg: 90,
+  alert: 80,
+  crit: 70,
+  panic: 65,
+  error: 60,
+  warn: 50,
+  notice: 45,
+  info: 40,
+  event: 35,
+  data: 30,
+  message: 25,
+  signal: 20,
+  trace: 10,
+  meta: 5,
+  secret: 1
 }
 
-export {logLevels};
+export {levels};

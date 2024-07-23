@@ -1,6 +1,5 @@
-import {User} from '../sql/user.js';
-import {uuidv4} from 'uuid';
-import {hashValid} from '../../lib/hash.js';
+import {User} from '../controllers/user.js';
+import {hashValid} from  '../lib/auth/hash.js';
 import {setSession} from './session.js';
 import bcrypt from 'bcrypt';
 

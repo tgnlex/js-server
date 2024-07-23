@@ -1,5 +1,5 @@
-import {todoTable} from '../../sql/export.js';
-import {all, insert, remove,  id, byUser} from '../../sql/export.js'
+import {todoTable, all, insert, remove,  id, byUser} from '../lib/sql/export.js'
+
 class Todo {
   static table = todoTable;
   static add(todo) { insert(this.table, todo); }
@@ -8,12 +8,12 @@ class Todo {
     let data = all(this.table); 
     return data;
   }
-  static getById(row_id) {
+  static async getById(row_id) {
     const data = await id(this.table, row_id); 
     return data;
   }
-  static byUser(user_id) {
-    const data = owner(this.table,  user_id) 
+  static async byUser(user_id) {
+    const data = await byUser(this.table,  user_id) 
     return data;
   }
 }
