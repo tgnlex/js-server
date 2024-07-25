@@ -1,20 +1,20 @@
 import express from 'express';
-import {log} from '../../logger/logger.js'
-const utilRouter = express.Router();
+import logger from '../../logger/logger.js'
+const util = express.Router();
 
-utilRouter.get('/', (req, res) => {
-  res.json({router: "api", subRouter: "utility"})
-})
+util.get('/', (req, res) => {
+  res.json({router: "util", parent_router: "api"})
+});
 
-utilRouter.get('/log/level', (req, res) => {
+util.get('/log_level', (req, res) => {
   const { level } = req.body;
   if (level) {
-    log.level = level;
+    logger.level = level;
     res.status(200).send(level);
   } else {
     const error = new Error('[UTIL]: An error occurred while trying to update log level');
-    log.error(error);
+    logger.error(error);
     res.redirect('/');
   }
 })
-export {utilRouter};
+export default util;

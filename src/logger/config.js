@@ -1,8 +1,8 @@
-import {LOG_LEVEL} from '../config/env.js';
-import {levels} from './config/levels.js';
-import {levelFormat, bindingFormat} from './config/format.js';
-import {datetime} from './config/time.js';
-import {transports} from './config/transports.js';
+import {LOG_LEVEL} from '../config/constants.js';
+import {levels} from './lib/levels.js';
+import {levelFormat, bindingFormat} from './lib/format.js';
+import {datetime} from './lib/time.js';
+import {transports} from './lib/transports.js';
 const config = {
   level: LOG_LEVEL || "trace",
   customLevels: levels,
@@ -14,4 +14,4 @@ const config = {
   transports
 };
 
-export {config};
+export default config;

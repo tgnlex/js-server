@@ -1,0 +1,38 @@
+<form class="login-form">
+  <label id="email-label" class="form-label" for="email">
+    Email:
+    <input 
+      id="email"
+      name="email"
+      type="email"
+      class="form-control form-control-text form-control-email"
+      placeholder="Enter your email..."
+      required
+    />
+  </label>
+  <label>
+    Password: 
+    <input 
+      id="password"
+      name="password"
+      type="password"
+      class="form-control form-control-text form-control-password"
+      placeholder="Enter your password..."
+      required
+    />
+  </label>
+  <label id="password-label" class="form-label" for="remember">
+    Remember login?
+    <input 
+      id="remember" 
+      name="remember" 
+      class="form-control form-control-check" type="checkbox" 
+    />
+  </label>
+  <button id="login-submit" class="btn btn-login" type="submit">Login</button>
+  <a id="forgot-password" class="link" href="#">
+    <small id="forgot-password-text" class="small-text">
+      Forgot your password?
+    </small>
+  </a>
+</form>

@@ -1,0 +1,29 @@
+@mixin column {
+  display: flex;
+  flex-direction: column;
+}
+@mixin flex-container {
+  @include column;
+  justify-content: space-around;
+  align-items: center;
+  border: 2px solid black;
+}
+
+@mixin row {
+  display: flex;
+  flex-direction: row;
+}
+
+@mixin row-center {
+  @include row;
+  place-items: center;
+  place-content: center;
+}
+
+@mixin col-center {
+  @include col;
+  place-items: center;
+  place-content: center;
+}
+
+

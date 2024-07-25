@@ -1,0 +1,20 @@
+
+@mixin theme-dark {
+  background-color: $theme-dark-bg;
+  color: $theme-dark-text;
+}
+@mixin theme-light {
+  background-color: $theme-light-bg;
+  color: $theme-light-text;
+}
+
+@mixin theme-switch($theme) {
+  @if $theme == 'dark' {
+    @include theme-dark;
+    border: $theme-dark-border;
+  } 
+  @else {
+    @include theme-light;
+    border: $theme-light-border;
+  }
+}

@@ -1,0 +1,11 @@
+@import '../mixins/flex';
+@import '../mixins/forms';
+.login-form {
+  @include flex-container;
+  @include text-controls;
+}
+
+.register-form {
+  @include flex-container; 
+  @include text-controls;
+}

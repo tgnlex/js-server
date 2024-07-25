@@ -1,0 +1,15 @@
+@import '../mixins/flex';
+@import '../mixins/lists';
+@import '../mixins/links';
+.navbar {
+  display: flex;
+  height: 10%;
+  width: 100%;
+  .nav-list {
+    @include row;
+    @include inline-list;
+  }
+  .nav-link {
+    @include link;
+  }
+}

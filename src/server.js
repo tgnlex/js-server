@@ -1,32 +1,23 @@
 import express from 'express';
 import session from 'express-session';
-import nunjucks from 'nunjucks';
-import {config} from '../config/config.js';
-import {__view, __public, __style} from '../config/path.js';
-import {HOST, PORT} from '../config/constants.js';
-import {index} from './client/index.js';
+import {HOST, PORT} from './config/constants.js';
+import {__views, __static} from './config/path.js';
+import {index} from './routes/index.js';
 import {api} from './api/api.js';
 const app = express();
 
-nunjucks.configure(__view, {watch: true,  express: app });
+app.set('views',  __views); 
+app.set('view engine', 'ejs');
 
-app.set('views', __view); 
-app.set('view engine', 'html');
-app.use(express.static(__public));
-
-app.use(express.urlencoded({extended: true}))
+app.use(express.static(__static));
 app.use(express.json());
-app.use(config.stylus)
-app.use(session(config.session));
-/**  Routers **/
+app.use(express.urlencoded({extended: true}))
+
+//app.use(session());
 
 app.use(index);
 app.use('/api', api);
 
-
-function server() {
-  app.listen(PORT, () => {
-    console.info(`[APP]: Server running on http://${HOST}:${PORT}`)
-  })
-}
-export {server};
+app.listen(PORT, () => {
+  console.info(`[MAIN]: Server running on http://${HOST}:${PORT}`)
+})

@@ -1,0 +1,12 @@
+
+@mixin text-controls {
+  .form-control[type="text"] {
+    width: 80%;
+    border: 2px solid gray;
+    @content;
+  }
+   .form-control[type="text"]:hover {
+     border: 3px solid black;
+   }
+}
+

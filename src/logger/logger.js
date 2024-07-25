@@ -1,6 +1,6 @@
 import pino from 'pino';
-import {config} from './config.js';
+import config from './config.js';
 
-const log = pino(config);
+const logger = pino(config);
 
-export {log};
+export default logger;

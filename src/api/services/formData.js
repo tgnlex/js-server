@@ -15,7 +15,7 @@ function userData(req) {
     firstname: req.body.firstname,
     lastname: req.body.lastname,
     age: req.body.age,
-    username: req.body.username, 
+    username: req.body.username,
     email: req.body.email, 
     pass: req.body.pass,
     pass2: req.body.pass2

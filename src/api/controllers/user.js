@@ -1,4 +1,4 @@
-import {userTable, insert, remove, id, all, search} from '../lib/sql/export.js';
+import {userTable, insert, remove, id, all, search} from '../sql/export.js';
 class User {
   static table = userTable;
   static async add(user) { insert(this.table, user); }

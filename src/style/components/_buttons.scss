@@ -1,0 +1,17 @@
+@import '../lib/colors';
+
+.btn-basic {
+  background-color: $extra-light;
+  &:hover {
+    cursor: pointer;
+    background-color: $blue-hard;
+  }
+}
+
+.btn-delete {
+  background-color: $alert; 
+  &:hover {
+    cursor: pointer;
+  }
+}
+

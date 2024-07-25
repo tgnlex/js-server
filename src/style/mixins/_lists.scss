@@ -1,0 +1,12 @@
+
+@mixin list {
+  list-style-type: none;
+  overflow: hidden;
+}
+
+@mixin inline-list {
+  @include list;
+  & li {
+    display: inline-block;
+  }
+}

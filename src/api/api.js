@@ -1,22 +1,16 @@
 import express from 'express';
-//import {todoRouter} from './api/todo.js';
-//import {utilRouter} from './api/util.js';
+import router from './router.js';
 const api = express.Router();
 
-//api.use(todoRouter)
-//api.use('/util', utilRouter)
-//api.use('/auth', authRouter)
-const data = {
-  message: "hello",
-  value: 7,
-  test: true
-}
+api.use(router.todo);
+api.use(router.util);
+//api.use(router.auth)
 
 api.get('/', (req, res, next) => {
-  res.status(200).json({route: "api index"})
+  res.status(200).json({message: "hello world"})
 });
 api.get('/test', (req, res, next) => {
-  res.status(200).json(data);
+  res.status(200).json({test: "success"});
 })
 
 export {api};

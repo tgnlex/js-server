@@ -1,4 +1,4 @@
-import {todoTable, all, insert, remove,  id, byUser} from '../lib/sql/export.js'
+import {todoTable, all, insert, remove,  id, byUser} from '../sql/export.js'
 
 class Todo {
   static table = todoTable;
@@ -17,4 +17,4 @@ class Todo {
     return data;
   }
 }
-export {Todo};
+export default Todo;

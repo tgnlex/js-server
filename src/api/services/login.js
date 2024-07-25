@@ -1,5 +1,5 @@
 import {User} from '../controllers/user.js';
-import {hashValid} from  '../lib/auth/hash.js';
+import {hashValid} from  './hash.js';
 import {setSession} from './session.js';
 import bcrypt from 'bcrypt';
 

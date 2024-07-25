@@ -1,25 +1,25 @@
 import express from 'express';
-import {Todo} from '../../controllers/todo.js';
-const todoRouter = express.Router();
+import Todo from '../controllers/todo.js';
+const todo = express.Router();
 
-todoRouter.get('/todo', (req, res, next) => {
+todo.get('/todo', (req, res, next) => {
   const data = Todo.all();
   res.json(data);
 });
 
-todoRouter.get('/todo/search/:id', (req, res, next) => {
+todo.get('/todo/search/:id', (req, res, next) => {
   let id = req.params;
   let data = Todo.getById(id)
   res.json(data);
 });
 
-todoRouter.get('/todo/users/:user_id', (req, res, next) => {
+todo.get('/todo/users/:user_id', (req, res, next) => {
   let user_id = req.params;
   let data = Todo.owner(owner_id);
   res.json(data);
 });
 
-todoRouter.delete('/todo/delete/:id', (req, res, next) => {
+todo.delete('/todo/delete/:id', (req, res, next) => {
   let id = req.params;
   try {Todo.remove(id)}
   catch(err) {
@@ -29,9 +29,9 @@ todoRouter.delete('/todo/delete/:id', (req, res, next) => {
   res.status(200).json({ message: "sucess"})
 });
 
-todoRouter.post('/todo/new', (req, res, next, err) => {
-  let todo = todoData(req);
-  try { Todo.add(todo); }
+todo.post('/todo/new', (req, res, next, err) => {
+  let todoData = todoData(req);
+  try { Todo.add(todoData); }
   catch (err) { 
     res.json({ message: `${err.message}`})
     throw err;
@@ -39,4 +39,4 @@ todoRouter.post('/todo/new', (req, res, next, err) => {
   res.status(200).json({ message: "success!" });
 });
 
-export {todoRouter};
+export default todo;

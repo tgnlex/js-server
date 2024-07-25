@@ -1,0 +1,239 @@
+* {
+  margin: 0;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html, body, div, span, object, iframe, figure, blockquote,
+h1, h2, h3, h4, h5, h6, p, pre, a, code, em, img, small,
+strike, strong, sub, sup, tt, b, u, i, ol, ul, li, fieldset,
+form, label, table, caption, tbody, tfoot, thead, tr, th, td,
+main, canvas, embed, footer, header, nav, section, video {
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  text-size-adjust: none;
+}
+
+footer, header, nav, section, main {
+  display: block;
+}
+
+body {
+  line-height: 1.5;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+input {
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+image, img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+html, body, h1, h2, h3, h4, h5, h6, a, p, span, em, small, strong, sub, sup, mark, del, ins, strike, abbr, dfn, blockquote, q, cite, code, pre, ol, ul, li, dl, dt, dd, div, section, article, main, aside, nav, menu, search, header, hgroup, footer, img, figure, figcaption, address, time, audio, video, canvas, iframe, details, summary, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+  font-size: 62.5%;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+a, a:visited {
+  color: inherit;
+}
+
+article, aside, footer, header, nav, section, main {
+  display: block;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+img, image, video {
+  max-width: 100%;
+}
+
+img, image {
+  border-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+[disabled] {
+  cursor: not-allowed;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.sr-only {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+.navbar {
+  display: flex;
+  height: 10%;
+  width: 100%;
+}
+.navbar .nav-list {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  overflow: hidden;
+}
+.navbar .nav-list li {
+  display: inline-block;
+}
+.navbar .nav-link {
+  text-decoration: none;
+  display: block;
+  color: black;
+}
+.navbar .nav-link :visited {
+  color: purple;
+}
+
+.btn-basic {
+  background-color: rgb(250, 251, 252);
+}
+.btn-basic:hover {
+  cursor: pointer;
+  background-color: rgb(0, 73, 183);
+}
+
+.btn-delete {
+  background-color: rgb(237, 27, 36);
+}
+.btn-delete:hover {
+  cursor: pointer;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border: 2px solid black;
+}
+.login-form .form-control[type=text] {
+  width: 80%;
+  border: 2px solid gray;
+}
+.login-form .form-control[type=text]:hover {
+  border: 3px solid black;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border: 2px solid black;
+}
+.register-form .form-control[type=text] {
+  width: 80%;
+  border: 2px solid gray;
+}
+.register-form .form-control[type=text]:hover {
+  border: 3px solid black;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-1750px);
+  }
+}
+.scrolling-slider {
+  background: white;
+  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
+  height: 100px;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  width: 960px;
+}
+.scrolling-slider::before, .scrolling-slider::after {
+  background: linear-gradient(to right, 0%, rgba(255, 255, 255, 0) 100%);
+  content: "";
+  height: 100px;
+  position: absolute;
+  width: 200px;
+  z-index: 2;
+}
+.scrolling-slider::after {
+  right: 0;
+  top: 0;
+  transform: rotateZ(180deg);
+}
+.scrolling-slider::before {
+  left: 0;
+  top: 0;
+}
+.scrolling-slider .slide-track {
+  animation: scroll 40 linear infinite;
+  display: flex;
+  flex-direction: row;
+  width: 3500px;
+}
+.scrolling-slider .slide {
+  height: 100px;
+  width: 250px;
+  border: 1px solid black;
+}
+
+/*# sourceMappingURL=main.css.map */
