@@ -7,7 +7,7 @@ api.use(router.util);
 //api.use(router.auth)
 
 api.get('/', (req, res, next) => {
-  res.status(200).json({message: "hello world"})
+  res.status(200).json({message: "hello"})
 });
 api.get('/test', (req, res, next) => {
   res.status(200).json({test: "success"});

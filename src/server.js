@@ -21,3 +21,5 @@ app.use('/api', api);
 app.listen(PORT, () => {
   console.info(`[MAIN]: Server running on http://${HOST}:${PORT}`)
 })
+
+export default app;
